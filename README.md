@@ -11,11 +11,13 @@
   rails _6.1.5_ new rails_6_2 -M -B -j esbuild -T
 
 - fix tzinfo-data in Gemfile then run:
-  bundle install
-  rails webpacker:install
+
+  - bundle install
+  - rails webpacker:install
 
 - fix Webpack hashing algorithm by add ENV:
-  NODE_OPTIONS: --openssl-legacy-provider
+
+  - NODE_OPTIONS: --openssl-legacy-provider
 
 - run dev env:
-  rails s
+  - rails s
