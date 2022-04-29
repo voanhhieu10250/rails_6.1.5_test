@@ -8,7 +8,8 @@
 ## COMMANDS:
 
 - create:
-  rails _6.1.5_ new rails_6_2 -M -B -j esbuild -T
+
+  - rails \_6.1.5\_ new rails_6_2 -M -B -j esbuild -T
 
 - fix tzinfo-data in Gemfile then run:
 
