@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- I had problem with the TestMailer (NameError) when trying to deploy on Heroku. I'd tried to fix it but I failed. So I decided to unable skip the Mailer and Testing files.
+- We also had problem when trying to create new rails project on Windows (tzinfo-data). So we used flag -B to prevent rails from running 'bundle install' while creating new project.
+- After created rails project, we had to deal with another problem about hashing algorithm that comes with Webpack. So I had to install Figaro gem to apply ENV for NODE_OPTIONS. [https://stackoverflow.com/questions/69394632/webpack-build-failing-with-err-ossl-evp-unsupported#:~:text=export-,NODE_OPTIONS%3D%2D%2Dopenssl%2Dlegacy%2Dprovider,-sachaw%27s%20comment%20to](link)
+- Don't forget to add production group in Gemfile for postgre DB. I made this mistake when I deploy this app to Heroku first time.
 
-Things you may want to cover:
+## COMMANDS:
 
-* Ruby version
+- create:
+  rails _6.1.5_ new rails_6_2 -M -B -j esbuild -T
 
-* System dependencies
+- fix tzinfo-data in Gemfile then run:
+  bundle install
+  rails webpacker:install
 
-* Configuration
+- fix Webpack hashing algorithm by add ENV:
+  NODE_OPTIONS: --openssl-legacy-provider
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- run dev env:
+  rails s
