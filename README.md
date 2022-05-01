@@ -16,9 +16,13 @@
   - bundle install
   - rails webpacker:install
 
-- fix Webpack hashing algorithm by add ENV:
+- fix Webpack hashing algorithm:
 
-  - NODE_OPTIONS: --openssl-legacy-provider
+  - add figaro gem to the Gemfile and run the following commands:
+    - bundle
+    - bundle exec figaro install
+  - add this ENV to application.yml:
+    - NODE_OPTIONS: --openssl-legacy-provider
 
 - run dev env:
   - rails s
